@@ -143,23 +143,24 @@ boxIconList.forEach((icon) => {
 
 const select = document.getElementById('select-filter');
 
+const AnimalList = boxIconList.filter((attribute) => {
+	return attribute.type == "animal";
+});
+const VegetableList = boxIconList.filter((attribute) => {
+	return attribute.type == "vegetable";
+});
+const UserList = boxIconList.filter((attribute) => {
+	return attribute.type == "user";
+});
+
 select.addEventListener('change', function () {
 	if (select.value == 2) {
-		const AnimalList = boxIconList.filter((attribute) => {
-			return attribute.type == "animal";
-		});
 		console.log(AnimalList);
 	} 
 	else if (select.value == 3) {
-		const VegetableList = boxIconList.filter((attribute) => {
-			return attribute.type == "vegetable";
-		});
 		console.log(VegetableList);
 	} 
 	else if (select.value == 4) {
-		const UserList = boxIconList.filter((attribute) => {
-			return attribute.type == "user";
-		});
 		console.log(UserList);
 	} 
 	else {
