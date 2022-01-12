@@ -46,18 +46,23 @@ main {
     color: orange;
 }
 
-.ms_background-white {
+.ms_bg-white{
     background-color: #fff;
 }
 
-.ms_background-cyan {
+.ms_bg-cyan {
     background-color: #00b4e2;
 }
 
 .ms_size {
-    font-size: 20px;
+    font-size: 25px;
 }
 
 .ms_text-size {
     font-size: 12px;
+    margin-bottom: 0;
+}
+
+.ms_height {
+    height: 80px;
 }
