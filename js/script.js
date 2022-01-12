@@ -115,21 +115,6 @@ const boxIconList = [
 
 const boxHtml = document.getElementById('box-icon');
 
-// createIcon(boxHtml, boxIconList);
-
-// function createIcon(box, array) {
-
-// 	array.forEach((icon) => {
-// 		box.innerHTML += 
-// 		`
-// 			<div class="col-2 ${icon.type}">
-// 				<i class="${icon.family} ${icon.prefix}${icon.name} ms_${icon.color}"></i>
-// 				<p>${icon.name.toUpperCase()}</p>
-// 			</div>
-// 		`
-// 	});
-// }
-
 function createIconBox(box, array) {
 
 	array.forEach((icon) => {
@@ -143,6 +128,17 @@ function createIconBox(box, array) {
 	});
 }
 
+// function hideIconBox(box, array) {
+// 	array.forEach((icon) => {
+// 		box.innerHTML += 
+// 		`
+// 			<div class="col-2 ${icon.type} d-none">
+// 				<i class="${icon.family} ${icon.prefix}${icon.name} ms_${icon.color}"></i>
+// 				<p>${icon.name.toUpperCase()}</p>
+// 			</div>
+// 		`
+// 	});
+// }
 
 const select = document.getElementById('select-filter');
 
