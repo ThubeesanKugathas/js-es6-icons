@@ -130,40 +130,47 @@ const boxHtml = document.getElementById('box-icon');
 // 	});
 // }
 
-boxIconList.forEach((icon) => {
-	boxHtml.innerHTML += 
-	`
-		<div class="col-2 ${icon.type}">
-			<i class="${icon.family} ${icon.prefix}${icon.name} ms_${icon.color}"></i>
-			<p>${icon.name.toUpperCase()}</p>
-		</div>
-	`
-});
+function createIconBox(box, array) {
+
+	array.forEach((icon) => {
+		box.innerHTML += 
+		`
+			<div class="col-2 ${icon.type}">
+				<i class="${icon.family} ${icon.prefix}${icon.name} ms_${icon.color}"></i>
+				<p>${icon.name.toUpperCase()}</p>
+			</div>
+		`
+	});
+}
 
 
 const select = document.getElementById('select-filter');
 
-const AnimalList = boxIconList.filter((attribute) => {
+const animalList = boxIconList.filter((attribute) => {
 	return attribute.type == "animal";
 });
-const VegetableList = boxIconList.filter((attribute) => {
+const vegetableList = boxIconList.filter((attribute) => {
 	return attribute.type == "vegetable";
 });
-const UserList = boxIconList.filter((attribute) => {
+const userList = boxIconList.filter((attribute) => {
 	return attribute.type == "user";
 });
 
 select.addEventListener('change', function () {
 	if (select.value == 2) {
-		console.log(AnimalList);
+		createIconBox(boxHtml, animalList)
+		console.log(animalList);
 	} 
 	else if (select.value == 3) {
-		console.log(VegetableList);
+		createIconBox(boxHtml, vegetableList)
+		console.log(vegetableList);
 	} 
 	else if (select.value == 4) {
-		console.log(UserList);
+		createIconBox(boxHtml, userList)
+		console.log(userList);
 	} 
 	else {
+		createIconBox(boxHtml, boxIconList)
 		console.log(boxIconList);
 	}
 });
