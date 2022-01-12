@@ -138,28 +138,31 @@ createIconBox(boxHtml, boxIconList);
 const select = document.getElementById('select-filter');
 
 // FILTER'S ARRAYS ------------------------------------------------
-const animalList = boxIconList.filter((attribute) => {
-	return attribute.type == "animal";
-});
-const vegetableList = boxIconList.filter((attribute) => {
-	return attribute.type == "vegetable";
-});
-const userList = boxIconList.filter((attribute) => {
-	return attribute.type == "user";
-});
+// const animalList = boxIconList.filter((attribute) => {
+// 	return attribute.type == "animal";
+// });
+// const vegetableList = boxIconList.filter((attribute) => {
+// 	return attribute.type == "vegetable";
+// });
+// const userList = boxIconList.filter((attribute) => {
+// 	return attribute.type == "user";
+// });
 
-const filterList = [
-	boxIconList,
-	animalList,
-	vegetableList,
-	userList
-];
+// const filterList = [
+// 	boxIconList,
+// 	animalList,
+// 	vegetableList,
+// 	userList
+// ];
 
 // ADDEVENTLISTENER - FILTER
 select.addEventListener('change', function () {
 	const valore = select.value;
+	const newFilter = boxIconList.filter((attribute) => {
+		return attribute.type == valore;
+	})
 	boxHtml.innerHTML = '';
-	createIconBox(boxHtml, filterList[valore - 1]);
+	createIconBox(boxHtml, newFilter);
 });
 
 
