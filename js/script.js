@@ -124,3 +124,10 @@ boxIconList.forEach((icon) => {
         </div>
     `
 });
+
+const select = document.getElementById('select-filter');
+
+select.addEventListener('change', function () {
+	console.log(this.value);
+})
+
