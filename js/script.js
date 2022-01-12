@@ -118,7 +118,9 @@ const boxHtml = document.getElementById('box-icon');
 boxIconList.forEach((icon) => {
     boxHtml.innerHTML += 
     `
-        <i class="${icon.family} ${icon.prefix}${icon.name} ms_${icon.color}"></i>
-        <p>${icon.name.toUpperCase()}</p>
+        <div class="col-2">
+            <i class="${icon.family} ${icon.prefix}${icon.name} ms_${icon.color}"></i>
+            <p>${icon.name.toUpperCase()}</p>
+        </div>
     `
 });
