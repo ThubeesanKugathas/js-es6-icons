@@ -113,35 +113,29 @@ const boxIconList = [
 	}
 ];
 
-const boxHtml = document.getElementById('box-icon');
-
+// FUNCTIONS --------------------------------------------------------
 function createIconBox(box, array) {
-
+	
 	array.forEach((icon) => {
 		box.innerHTML += 
 		`
-			<div class="col-2 ${icon.type}">
-				<i class="${icon.family} ${icon.prefix}${icon.name} ms_${icon.color}"></i>
-				<p>${icon.name.toUpperCase()}</p>
-			</div>
+		<div class="col-2 ${icon.type}">
+		<i class="${icon.family} ${icon.prefix}${icon.name} ms_${icon.color}"></i>
+		<p>${icon.name.toUpperCase()}</p>
+		</div>
 		`
 	});
 }
 
-// function hideIconBox(box, array) {
-// 	array.forEach((icon) => {
-// 		box.innerHTML += 
-// 		`
-// 			<div class="col-2 ${icon.type} d-none">
-// 				<i class="${icon.family} ${icon.prefix}${icon.name} ms_${icon.color}"></i>
-// 				<p>${icon.name.toUpperCase()}</p>
-// 			</div>
-// 		`
-// 	});
-// }
+// --------------------------------------------------------------------
+
+const boxHtml = document.getElementById('box-icon');
+
+createIconBox(boxHtml, boxIconList);
 
 const select = document.getElementById('select-filter');
 
+// FILTER'S ARRAYS ------------------------------------------------
 const animalList = boxIconList.filter((attribute) => {
 	return attribute.type == "animal";
 });
@@ -152,26 +146,23 @@ const userList = boxIconList.filter((attribute) => {
 	return attribute.type == "user";
 });
 
+// ADDEVENTLISTENER - FILTER
 select.addEventListener('change', function () {
 	if (select.value == 2) {
 		boxHtml.innerHTML = '';
 		createIconBox(boxHtml, animalList)
-		console.log(animalList);
 	} 
 	else if (select.value == 3) {
 		boxHtml.innerHTML = '';
 		createIconBox(boxHtml, vegetableList)
-		console.log(vegetableList);
 	} 
 	else if (select.value == 4) {
 		boxHtml.innerHTML = '';
 		createIconBox(boxHtml, userList)
-		console.log(userList);
 	} 
 	else {
 		boxHtml.innerHTML = '';
 		createIconBox(boxHtml, boxIconList)
-		console.log(boxIconList);
 	}
 });
 
