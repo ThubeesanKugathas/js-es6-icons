@@ -140,16 +140,18 @@ const select = document.getElementById('select-filter');
 // ADDEVENTLISTENER - FILTER
 select.addEventListener('change', function () {
 	const valore = select.value;
+	let filteredList;
 	if (valore == 'all') {
-		boxHtml.innerHTML = '';
-		createIconBox(boxHtml, boxIconList);
-	} else {
+		filteredList = boxIconList;
+	} 
+	else {
 		const newFilter = boxIconList.filter((attribute) => {
 			return attribute.type == valore;
 		})
-		boxHtml.innerHTML = '';
-		createIconBox(boxHtml, newFilter);
+		filteredList = newFilter;
 	}
+	boxHtml.innerHTML = '';
+	createIconBox(boxHtml, filteredList);
 });
 
 
