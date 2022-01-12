@@ -119,6 +119,6 @@ boxIconList.forEach((icon) => {
     boxHtml.innerHTML += 
     `
         <i class="${icon.family} ${icon.prefix}${icon.name} ms_${icon.color}"></i>
-        <p>${icon.name}</p>
+        <p>${icon.name.toUpperCase()}</p>
     `
 });
