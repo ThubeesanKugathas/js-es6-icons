@@ -154,18 +154,22 @@ const userList = boxIconList.filter((attribute) => {
 
 select.addEventListener('change', function () {
 	if (select.value == 2) {
+		boxHtml.innerHTML = '';
 		createIconBox(boxHtml, animalList)
 		console.log(animalList);
 	} 
 	else if (select.value == 3) {
+		boxHtml.innerHTML = '';
 		createIconBox(boxHtml, vegetableList)
 		console.log(vegetableList);
 	} 
 	else if (select.value == 4) {
+		boxHtml.innerHTML = '';
 		createIconBox(boxHtml, userList)
 		console.log(userList);
 	} 
 	else {
+		boxHtml.innerHTML = '';
 		createIconBox(boxHtml, boxIconList)
 		console.log(boxIconList);
 	}
