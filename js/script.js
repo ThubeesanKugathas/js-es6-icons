@@ -146,24 +146,18 @@ const userList = boxIconList.filter((attribute) => {
 	return attribute.type == "user";
 });
 
+const filterList = [
+	boxIconList,
+	animalList,
+	vegetableList,
+	userList
+];
+
 // ADDEVENTLISTENER - FILTER
 select.addEventListener('change', function () {
-	if (select.value == 2) {
-		boxHtml.innerHTML = '';
-		createIconBox(boxHtml, animalList)
-	} 
-	else if (select.value == 3) {
-		boxHtml.innerHTML = '';
-		createIconBox(boxHtml, vegetableList)
-	} 
-	else if (select.value == 4) {
-		boxHtml.innerHTML = '';
-		createIconBox(boxHtml, userList)
-	} 
-	else {
-		boxHtml.innerHTML = '';
-		createIconBox(boxHtml, boxIconList)
-	}
+	const valore = select.value;
+	boxHtml.innerHTML = '';
+	createIconBox(boxHtml, filterList[valore - 1]);
 });
 
 
