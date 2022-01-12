@@ -1,15 +1,38 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #dddddd;
+}
+
+header {
+    height: 50px;
+    position: relative;
+}
+
+header h1 {
+    color: #00b4e2;
+    position: absolute;
+    margin-bottom: 0;
+    bottom: 0;
+    font-size: 30px;
+    font-weight: 600;
+}
+
 nav {
     height: 50px;
-    background-color: #00b4e2;
     text-align: center;
     line-height: 50px;
+    color: #fff;
 }
 
 
+#select-filter {
+    font-size: 12px;
+}
 
 
-
-
+main {
+    padding-top: 20px;
+}
 
 .ms_green {
     color: green;
@@ -21,4 +44,20 @@ nav {
 
 .ms_orange {
     color: orange;
+}
+
+.ms_background-white {
+    background-color: #fff;
+}
+
+.ms_background-cyan {
+    background-color: #00b4e2;
+}
+
+.ms_size {
+    font-size: 20px;
+}
+
+.ms_text-size {
+    font-size: 12px;
 }

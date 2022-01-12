@@ -119,9 +119,9 @@ function createIconBox(box, array) {
 	array.forEach((icon) => {
 		box.innerHTML += 
 		`
-		<div class="col-2 ${icon.type}">
-		<i class="${icon.family} ${icon.prefix}${icon.name} ms_${icon.color}"></i>
-		<p>${icon.name.toUpperCase()}</p>
+		<div class="col-2 my-3 text-center">
+			<i class="${icon.family} ${icon.prefix}${icon.name} ms_${icon.color}  ms_size"></i>
+			<p class="ms_text-size">${icon.name.toUpperCase()}</p>
 		</div>
 		`
 	});
