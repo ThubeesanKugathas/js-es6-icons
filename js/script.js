@@ -117,6 +117,8 @@ const boxIconList = [
 function createIconBox(box, array) {
 	
 	array.forEach((icon) => {
+	
+
 		box.innerHTML += 
 		`
 		<div class="col-2 m-3 position-relative ms_height ms_bg-white  rounded-3">
@@ -139,17 +141,11 @@ const select = document.getElementById('select-filter');
 
 // ADDEVENTLISTENER - FILTER
 select.addEventListener('change', function () {
-	const valore = this.value;
-	let filteredList;
-	if (valore == 'all') {
-		filteredList = boxIconList;
-	} 
-	else {
-		const newFilter = boxIconList.filter((attribute) => {
-			return attribute.type == valore;
-		})
-		filteredList = newFilter;
-	}
+
+	const filteredList = boxIconList.filter((attribute) => {
+		return this.value === 'all' || attribute.type === this.value
+	})
+	
 	boxHtml.innerHTML = '';
 	createIconBox(boxHtml, filteredList);
 });
