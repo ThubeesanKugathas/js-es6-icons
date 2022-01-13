@@ -139,7 +139,7 @@ const select = document.getElementById('select-filter');
 
 // ADDEVENTLISTENER - FILTER
 select.addEventListener('change', function () {
-	const valore = select.value;
+	const valore = this.value;
 	let filteredList;
 	if (valore == 'all') {
 		filteredList = boxIconList;
